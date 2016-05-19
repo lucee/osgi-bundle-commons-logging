@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.lucee</groupId>
   <artifactId>commons-logging</artifactId>
-  <version>1.1.1</version>
+  <version>1.2.0</version>
   <name>Apache Commons Logging</name>
   <packaging>bundle</packaging>
 
@@ -95,7 +95,7 @@
                  <artifactItem>
                    <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
-                    <version>1.1.1</version>
+                    <version>1.2</version>
                    <type>jar</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -120,8 +120,8 @@
             <Bundle-Description>OSGI version of jar ${project.name}</Bundle-Description>
             <Export-Package>*</Export-Package>
             <!-- <Require-Bundle></Require-Bundle> -->
-            <!-- <Import-Package>*</Import-Package>
-            <DynamicImport-Package>*</DynamicImport-Package> -->
+            <Import-Package>!org.apache.log,!org.apache.avalon.framework.logger,*</Import-Package>
+            <DynamicImport-Package>org.apache.log,org.apache.avalon.framework.logger</DynamicImport-Package>
           </instructions>
         </configuration>
         <extensions>true</extensions>
